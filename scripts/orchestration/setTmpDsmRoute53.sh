@@ -1,6 +1,6 @@
 #!/bin/bash
 dnsname=${1}
-ctrlDnsName=$(curl http://169.254.169.254/latest/meta-data/public-hostname)
+ctrlDnsName=${2}
 
 
 aws route53 change-resource-record-sets --cli-input-json '{
@@ -12,10 +12,10 @@ aws route53 change-resource-record-sets --cli-input-json '{
         "Action": "UPSERT", 
         "ResourceRecordSet": {
           "Name": "'${dnsname}'.",
-          "Type": "A", 
+          "Type": "CNAME",
           "AliasTarget": {
-            "HostedZoneId": "Z35SXDOTRQ7X7K", 
-            "DNSName": "'${ctrlDnsName}'",
+            "HostedZoneId": "Z54BUX0B2EC7C",
+            "DNSName": "'${ctrlDnsName}'.",
             "EvaluateTargetHealth": false
           } 
         }
