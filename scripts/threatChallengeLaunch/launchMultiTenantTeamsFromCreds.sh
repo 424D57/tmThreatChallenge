@@ -3,7 +3,7 @@
 
 dsmT0Admin='t0Admin'
 dsmConsolePort='443'
-dsStackName="sharedDsStack"
+
 
 dsmT0Password=$(cat /home/ec2-user/variables/t0AdminPassword)
 eventName=$(cat /home/ec2-user/variables/eventName)
@@ -15,10 +15,11 @@ dsmSubnet=$(cat /home/ec2-user/variables/dsmSubnet)
 dbSubnet1=$(cat /home/ec2-user/variables/dbSubnet1)
 dbSubnet2=$(cat /home/ec2-user/variables/dbSubnet2)
 
+dsStackName="tmtcDsStack-${eventName}"
 
 
 dsmFqdn="dsm.${eventName}.trenddemos.com"
-
+#dsmFqdn=dsm.trenddemos.com
 
 logfile=launchMultiLog
 
@@ -36,7 +37,7 @@ do
     creds=(${line})
     teamlog=${creds[0]}.log
     echo "Launching environment for ${creds[0]}" >> ${logfile} 2>&1
-    nohup ./launchTeamSko2017mt.sh ${dsmT0Admin} "${dsmT0Password}" ${dsmFqdn} ${dsmConsolePort} ${creds[0]} ${creds[1]} &
+    nohup ./launchTmtcTeam.sh ${dsmT0Admin} "${dsmT0Password}" ${dsmFqdn} ${dsmConsolePort} ${creds[0]} ${creds[1]} &
     sleep 150
 done < "${filename}"
 echo "Removing creds file" >> ${logfile} 2>&1

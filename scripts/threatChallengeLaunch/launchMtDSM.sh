@@ -8,12 +8,11 @@ vpc=${4}
 dsmSubnet=${5}
 dbSubnet1=${6}
 dbSubnet2=${7}
-stackname="sharedDsStack"
+stackname=${8}
 
-if [ -n ${8} ]
-then
-    stackname=${8}
-fi
+
+
+
 
 
 aws cloudformation create-stack --disable-rollback \
