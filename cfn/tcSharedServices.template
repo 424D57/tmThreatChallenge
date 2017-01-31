@@ -54,6 +54,10 @@
       "ap-northeast-1" : {
         "ctf" : "ami-90117af7",
         "ctrl"   : "ami-56d4ad31"
+      },
+      "sa-east-1" : {
+        "ctf" : "ami-707ce41c",
+        "ctrl" : "ami-80086dec"
       }
     },
     "Parameters" : {

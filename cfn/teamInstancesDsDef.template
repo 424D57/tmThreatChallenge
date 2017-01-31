@@ -88,6 +88,10 @@
         "atk" : "ami-2f450048",
         "defvtm"   : "ami-723a7f15"
       }
+      "sa-east-1" : {
+        "atk" : "ami-c41e7aa8",
+        "defvtm" : "ami-c71e7aab"
+      }
     }
   },
   "Resources" :{
