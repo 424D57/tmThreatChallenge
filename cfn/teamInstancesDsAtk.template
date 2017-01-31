@@ -88,6 +88,11 @@
         "hackvtm" : "ami-2c1f7b40",
         "jump" : "ami-d41d79b8",
         "msf" : "ami-381d7954"
+      },
+      "us-west-2" : {
+        "hackvtm" : "ami-effb408f",
+        "jump" : "ami-aff942cf",
+        "msf" : "ami-aaf843ca"
       }
     }
   },

@@ -65,7 +65,13 @@
         "cleanW7" : "ami-551f7b39",
         "compW7" : "ami-1a117576",
         "osceServer" : "ami-9e79e3f2"
+      },
+      "us-west-2" : {
+        "cleanW7" : "ami-5dfa413d",
+        "compW7" : "ami-a707bfc7",
+        "osceServer" : "ami-6e833e0e"
       }
+
     }
   },
   "Resources": {

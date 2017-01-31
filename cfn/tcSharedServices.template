@@ -58,6 +58,10 @@
       "sa-east-1" : {
         "ctf" : "ami-707ce41c",
         "ctrl" : "ami-80086dec"
+      },
+      "us-west-2" : {
+        "ctf" : "ami-900ebaf0",
+        "ctrl" : "ami-f173cc91"
       }
     },
     "Parameters" : {

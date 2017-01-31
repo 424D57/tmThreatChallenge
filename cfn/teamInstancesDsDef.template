@@ -91,6 +91,10 @@
       "sa-east-1" : {
         "atk" : "ami-c41e7aa8",
         "defvtm" : "ami-c71e7aab"
+      },
+      "us-west-2" : {
+        "atk" : "ami-0df9426d",
+        "defvtm" : "ami-03f94263"
       }
     }
   },
