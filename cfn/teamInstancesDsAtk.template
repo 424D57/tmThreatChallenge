@@ -93,6 +93,11 @@
         "hackvtm" : "ami-effb408f",
         "jump" : "ami-aff942cf",
         "msf" : "ami-aaf843ca"
+      },
+      "eu-west-1" : {
+        "hackvtm" : "ami-5ac39b3c",
+        "jump": "ami-4fc49c29",
+        "msf" : "ami-5bc39b3d"
       }
     }
   },

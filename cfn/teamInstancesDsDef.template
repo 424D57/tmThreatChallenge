@@ -95,6 +95,10 @@
       "us-west-2" : {
         "atk" : "ami-0df9426d",
         "defvtm" : "ami-03f94263"
+      },
+      "eu-west-1" : {
+        "atk" : "ami-dac69ebc",
+        "defvtm" : "ami-2ac1994c"
       }
     }
   },

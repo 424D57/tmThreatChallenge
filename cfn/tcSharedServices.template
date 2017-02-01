@@ -62,6 +62,10 @@
       "us-west-2" : {
         "ctf" : "ami-900ebaf0",
         "ctrl" : "ami-f173cc91"
+      },
+      "eu-west-1" : {
+        "ctf" : "ami-75c9e906",
+        "ctrl" : "ami-70edb016"
       }
     },
     "Parameters" : {
