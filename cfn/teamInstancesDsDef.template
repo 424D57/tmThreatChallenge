@@ -92,6 +92,18 @@
         "atk" : "ami-75fdb612",
         "defvtm"   : "ami-723a7f15"
       }
+      "sa-east-1" : {
+        "atk" : "ami-c41e7aa8",
+        "defvtm" : "ami-c71e7aab"
+      },
+      "us-west-2" : {
+        "atk" : "ami-0df9426d",
+        "defvtm" : "ami-03f94263"
+      },
+      "eu-west-1" : {
+        "atk" : "ami-dac69ebc",
+        "defvtm" : "ami-2ac1994c"
+      }
     }
   },
   "Resources" :{

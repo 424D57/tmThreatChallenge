@@ -58,6 +58,18 @@
       "ap-northeast-1" : {
         "ctf" : "ami-71d79f16",
         "ctrl"   : "ami-56d4ad31"
+      },
+      "sa-east-1" : {
+        "ctf" : "ami-707ce41c",
+        "ctrl" : "ami-80086dec"
+      },
+      "us-west-2" : {
+        "ctf" : "ami-900ebaf0",
+        "ctrl" : "ami-f173cc91"
+      },
+      "eu-west-1" : {
+        "ctf" : "ami-75c9e906",
+        "ctrl" : "ami-70edb016"
       }
     },
     "Parameters" : {

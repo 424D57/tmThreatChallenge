@@ -65,6 +65,21 @@
         "cleanW7" : "ami-2e450049",
         "compW7"   : "ami-98a9edff",
         "osceServer" : "ami-6bee800c"
+      },
+      "sa-east-1" : {
+        "cleanW7" : "ami-551f7b39",
+        "compW7" : "ami-1a117576",
+        "osceServer" : "ami-9e79e3f2"
+      },
+      "us-west-2" : {
+        "cleanW7" : "ami-5dfa413d",
+        "compW7" : "ami-a707bfc7",
+        "osceServer" : "ami-6e833e0e"
+      },
+      "eu-west-1" : {
+        "cleanW7" : "ami-91c59df7",
+        "compW7" : "ami-2ec19948",
+        "osceServer" : "ami-29f7dd5a"
       }
     }
   },

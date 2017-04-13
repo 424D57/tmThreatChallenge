@@ -88,6 +88,21 @@
         "hackvtm" : "ami-1d11557a",
         "jump"   : "ami-f83b7e9f",
         "msf" : "ami-1a11557d"
+      },
+      "sa-east-1" : {
+        "hackvtm" : "ami-2c1f7b40",
+        "jump" : "ami-d41d79b8",
+        "msf" : "ami-381d7954"
+      },
+      "us-west-2" : {
+        "hackvtm" : "ami-effb408f",
+        "jump" : "ami-aff942cf",
+        "msf" : "ami-aaf843ca"
+      },
+      "eu-west-1" : {
+        "hackvtm" : "ami-5ac39b3c",
+        "jump": "ami-4fc49c29",
+        "msf" : "ami-5bc39b3d"
       }
     }
   },
