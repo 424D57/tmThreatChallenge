@@ -3,8 +3,8 @@
 dsmT0Password=$(cat /home/ubuntu/variables/t0AdminPassword)
 baseDomain=$(cat /home/ubuntu/variables/baseDomain)
 eventName=$(cat /home/ubuntu/variables/eventName)
-GitHubCtfUsername=$(cat /home/ec2-user/variables/GitHubCtfUsername)
-GitHubCtfRepoName=$(cat /home/ec2-user/variables/GitHubCtfRepoName)
+GitHubCtfUsername=$(cat /home/ubuntu/variables/GitHubCtfUsername)
+GitHubCtfRepoName=$(cat /home/ubuntu/variables/GitHubCtfRepoName)
 
 cd /home/ubuntu/
 apt-get update
