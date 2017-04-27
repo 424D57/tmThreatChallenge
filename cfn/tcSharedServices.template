@@ -67,6 +67,14 @@
     "Parameters" : {
       "CfnUrlPrefix" : {
         "Prefix" : "https://s3.amazonaws.com/trend-micro-quick-start/v-tmtc/"
+      },
+      "GitHubCtf" : {
+        "Username" : "wisco24",
+        "RepoName" : "fbctf"
+      },        
+      "GitHubTc" : {   
+        "Username" : "424D57",
+        "RepoName" : "tmThreatChallenge"
       }
     }
   },
@@ -251,8 +259,12 @@
                 { "Fn::Sub" : [ "echo ${t0AdminPassword} > /home/ec2-user/variables/t0AdminPassword\n", { "t0AdminPassword": { "Ref": "DsmT0Password" } } ] },
                 { "Fn::Sub" : [ "echo ${baseDomain} > /home/ec2-user/variables/baseDomain\n", { "baseDomain": { "Ref": "baseDomain" } } ] },
                 { "Fn::Sub" : [ "echo ${baseDomainHostedZoneId} > /home/ec2-user/variables/baseDomainHostedZoneId\n", { "baseDomainHostedZoneId": { "Ref": "baseDomainHostedZoneId" } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubCtfUsername} > /home/ec2-user/variables/GitHubCtfUsername\n", { "GitHubCtfUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubCtf", "Username" ] } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubCtfRepoName} > /home/ec2-user/variables/GitHubCtfRepoName\n", { "GitHubCtfRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubCtf", "RepoName" ] } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubTcUsername} > /home/ec2-user/variables/GitHubTcUsername\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubTcRepoName} > /home/ec2-user/variables/GitHubTcRepoName\n", { "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },                
                 "cd /home/ec2-user/\n",
-                "curl https://raw.githubusercontent.com/424D57/tmThreatChallenge/master/scripts/orchestration/setupControllerInstance.sh -o /home/ec2-user/setupControllerInstance.sh\n",
+                { "Fn::Sub" : [ "curl https://raw.githubusercontent.com/${GitHubTcUsername}/${GitHubTcRepoName}/master/scripts/orchestration/setupControllerInstance.sh -o /home/ec2-user/setupControllerInstance.sh\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } , "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },
                 "chmod +x ./setupControllerInstance.sh\n",
                 "./setupControllerInstance.sh\n",
                 "chown ec2-user:ec2-user /home/ec2-user/variables\n"
@@ -317,7 +329,11 @@
                 { "Fn::Sub" : [ "echo ${t0AdminPassword} > /home/ubuntu/variables/t0AdminPassword\n", { "t0AdminPassword": { "Ref": "DsmT0Password" } } ] },
                 { "Fn::Sub" : [ "echo ${eventName} > /home/ubuntu/variables/eventName\n", { "eventName": { "Ref": "EventName" } } ] },
                 { "Fn::Sub" : [ "echo ${baseDomain} > /home/ubuntu/variables/baseDomain\n", { "baseDomain": { "Ref": "baseDomain" } } ] },
-                "curl https://raw.githubusercontent.com/424D57/tmThreatChallenge/master/scripts/orchestration/setupCtfInstance.sh -o /home/ubuntu/setupCtfInstance.sh\n",
+                { "Fn::Sub" : [ "echo ${GitHubCtfUsername} > /home/ec2-user/variables/GitHubCtfUsername\n", { "GitHubCtfUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubCtf", "Username" ] } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubCtfRepoName} > /home/ec2-user/variables/GitHubCtfRepoName\n", { "GitHubCtfRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubCtf", "RepoName" ] } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubTcUsername} > /home/ec2-user/variables/GitHubTcUsername\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } } ] },
+                { "Fn::Sub" : [ "echo ${GitHubTcRepoName} > /home/ec2-user/variables/GitHubTcRepoName\n", { "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },    
+                { "Fn::Sub" : [ "curl https://raw.githubusercontent.com/${GitHubTcUsername}/${GitHubTcRepoName}/master/scripts/orchestration/setupCtfInstance.sh -o /home/ubuntu/setupCtfInstance.sh\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } , "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },                
                 "cd /home/ubuntu/; chmod +x ./setupCtfInstance.sh; ./setupCtfInstance.sh\n"
               ]
             ]

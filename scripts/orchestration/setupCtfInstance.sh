@@ -3,11 +3,13 @@
 dsmT0Password=$(cat /home/ubuntu/variables/t0AdminPassword)
 baseDomain=$(cat /home/ubuntu/variables/baseDomain)
 eventName=$(cat /home/ubuntu/variables/eventName)
+GitHubCtfUsername=$(cat /home/ec2-user/variables/GitHubCtfUsername)
+GitHubCtfRepoName=$(cat /home/ec2-user/variables/GitHubCtfRepoName)
 
 cd /home/ubuntu/
 apt-get update
 apt-get -y install git
-git clone https://github.com/wisco24/fbctf.git fbctf
+git clone https://github.com/${GitHubCtfUsername}/${GitHubCtfRepoName}.git fbctf
 chown -R ubuntu:ubuntu fbctf
 cd fbctf
 export HOME=/root

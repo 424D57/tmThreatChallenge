@@ -13,7 +13,11 @@ sudo yum -y install libunwind libicu
 
 
 cd /home/ec2-user/
-git clone https://github.com/424D57/tmThreatChallenge.git
+# Get variables
+GitHubTcUsername=$(cat /home/ec2-user/variables/GitHubTcUsername)
+GitHubTcRepoName=$(cat /home/ec2-user/variables/GitHubTcRepoName)
+# Clone Threat Challange Repository
+git clone https://github.com/${GitHubTcUsername}/${GitHubTcRepoName}.git
 chown -R ec2-user:ec2-user tmThreatChallenge
 cp /home/ec2-user/tmThreatChallenge/scripts/orchestration/.bashrc /home/ec2-user/
 mkdir .aws
