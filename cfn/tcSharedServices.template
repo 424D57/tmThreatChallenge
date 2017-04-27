@@ -69,7 +69,7 @@
         "Prefix" : "https://s3.amazonaws.com/trend-micro-quick-start/v-tmtc/"
       },
       "GitHubCtf" : {
-        "Username" : "424D57",
+        "Username" : "wisco24",
         "RepoName" : "fbctf"
       },        
       "GitHubTc" : {   
