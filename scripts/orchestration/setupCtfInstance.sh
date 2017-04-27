@@ -5,7 +5,7 @@ baseDomain=$(cat /home/ubuntu/variables/baseDomain)
 eventName=$(cat /home/ubuntu/variables/eventName)
 GitHubCtfUsername=$(cat /home/ubuntu/variables/GitHubCtfUsername)
 GitHubCtfRepoName=$(cat /home/ubuntu/variables/GitHubCtfRepoName)
-Stage=$(cat /home/ec2-user/variables/Stage)
+Stage=$(cat /home/ubuntu/variables/Stage)
 
 cd /home/ubuntu/
 apt-get update
