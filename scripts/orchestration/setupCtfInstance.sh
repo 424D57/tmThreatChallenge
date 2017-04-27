@@ -16,7 +16,7 @@ cd fbctf
 export HOME=/root
 
 # If we are creating a production environment...
-if [ "$Stage" = "prod"]; then
+if [ "$Stage" = "prod" ]; then
   # get an official certificate from let's encrypt...
   Certificate="certbot"
 else
