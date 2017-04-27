@@ -5,7 +5,7 @@ chmod a+x certbot-auto
 Stage=$(cat /home/ec2-user/variables/Stage)
 
 # If we are creating a production environment...
-if [ "$Stage" = "prod"]; then
+if [ "$Stage" = "prod" ]; then
   # create an official certificate...
   ./certbot-auto --debug certonly --webroot -w /usr/share/nginx/html/ -d ${dsmFqdn} --non-interactive --agree-tos --register-unsafely-without-email
 else
