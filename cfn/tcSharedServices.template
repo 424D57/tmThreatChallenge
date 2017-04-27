@@ -77,7 +77,7 @@
         "RepoName" : "tmThreatChallenge"
       },
       "Deployment" : {   
-        "Stage" : "test"
+        "Stage" : "prod"
       }
     }
   },
