@@ -75,6 +75,9 @@
       "GitHubTc" : {   
         "Username" : "424D57",
         "RepoName" : "tmThreatChallenge"
+      },
+      "Deployment" : {   
+        "Stage" : "test"
       }
     }
   },
@@ -263,6 +266,7 @@
                 { "Fn::Sub" : [ "echo ${GitHubCtfRepoName} > /home/ec2-user/variables/GitHubCtfRepoName\n", { "GitHubCtfRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubCtf", "RepoName" ] } } ] },
                 { "Fn::Sub" : [ "echo ${GitHubTcUsername} > /home/ec2-user/variables/GitHubTcUsername\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } } ] },
                 { "Fn::Sub" : [ "echo ${GitHubTcRepoName} > /home/ec2-user/variables/GitHubTcRepoName\n", { "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },                
+                { "Fn::Sub" : [ "echo ${Stage} > /home/ec2-user/variables/Stage\n", { "Stage": { "Fn::FindInMap" : [ "Parameters", "Deployment", "Stage" ] } } ] },
                 "cd /home/ec2-user/\n",
                 { "Fn::Sub" : [ "curl https://raw.githubusercontent.com/${GitHubTcUsername}/${GitHubTcRepoName}/master/scripts/orchestration/setupControllerInstance.sh -o /home/ec2-user/setupControllerInstance.sh\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } , "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },
                 "chmod +x ./setupControllerInstance.sh\n",
@@ -333,6 +337,7 @@
                 { "Fn::Sub" : [ "echo ${GitHubCtfRepoName} > /home/ubuntu/variables/GitHubCtfRepoName\n", { "GitHubCtfRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubCtf", "RepoName" ] } } ] },
                 { "Fn::Sub" : [ "echo ${GitHubTcUsername} > /home/ubuntu/variables/GitHubTcUsername\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } } ] },
                 { "Fn::Sub" : [ "echo ${GitHubTcRepoName} > /home/ubuntu/variables/GitHubTcRepoName\n", { "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },    
+                { "Fn::Sub" : [ "echo ${Stage} > /home/ubuntu/variables/Stage\n", { "Stage": { "Fn::FindInMap" : [ "Parameters", "Deployment", "Stage" ] } } ] },
                 { "Fn::Sub" : [ "curl https://raw.githubusercontent.com/${GitHubTcUsername}/${GitHubTcRepoName}/master/scripts/orchestration/setupCtfInstance.sh -o /home/ubuntu/setupCtfInstance.sh\n", { "GitHubTcUsername": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "Username" ] } , "GitHubTcRepoName": { "Fn::FindInMap" : [ "Parameters", "GitHubTc", "RepoName" ] } } ] },                
                 "cd /home/ubuntu/; chmod +x ./setupCtfInstance.sh; ./setupCtfInstance.sh\n"
               ]
