@@ -13,6 +13,8 @@ apt-get -y install git
 git clone https://github.com/${GitHubCtfUsername}/${GitHubCtfRepoName}.git fbctf
 chown -R ubuntu:ubuntu fbctf
 cd fbctf
+# use dev branch to get latest features like branding
+git checkout dev
 export HOME=/root
 
 # If we are creating a production environment...
